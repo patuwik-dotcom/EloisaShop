@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eloisa Shop | Fashion Finds</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="store-panel">
+      <a class="brand-mark" href="#" aria-label="Eloisa Shop home">
+        <span class="brand-icon">E</span>
+        <span>
+          <strong>Eloisa Shop</strong>
+          <small>Fresh fits, ready to wear.</small>
+        </span>
+      </a>
+
+      <div class="quick-stat">
+        <span>Cart value</span>
+        <strong id="mini-total">PHP 0</strong>
+      </div>
+
+      <nav class="category-list" aria-label="Product categories">
+        <button class="category-pill active" data-category="All">
+          <i class="bi bi-grid"></i>
+          All
+        </button>
+        <button class="category-pill" data-category="Graphic">
+          <i class="bi bi-palette"></i>
+          Graphic
+        </button>
+        <button class="category-pill" data-category="Basics">
+          <i class="bi bi-circle"></i>
+          Basics
+        </button>
+        <button class="category-pill" data-category="Blouses">
+          <i class="bi bi-flower1"></i>
+          Blouses
+        </button>
+      </nav>
+
+      <div class="delivery-card">
+        <i class="bi bi-truck"></i>
+        <div>
+          <strong>Free delivery</strong>
+          <span>Orders from PHP 500 ship free today.</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="store-main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">New closet picks</p>
+          <h1>Style your day with Eloisa Shop.</h1>
+        </div>
+
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+          <i class="bi bi-moon-stars"></i>
+        </button>
+      </header>
+
+      <section class="hero-grid" aria-label="Store highlights">
+        <div class="hero-feature">
+          <div>
+            <span class="tag">Featured bundle</span>
+            <h2>Simple tops with playful personality.</h2>
+            <p>Browse three easy pieces, save favorites, and build your cart with instant totals.</p>
+          </div>
+          <button class="btn btn-light" id="bundle-btn" type="button">
+            <i class="bi bi-stars"></i>
+            Add style bundle
+          </button>
+        </div>
+
+        <div class="metric-strip">
+          <div>
+            <span id="product-count">0</span>
+            <small>Products</small>
+          </div>
+          <div>
+            <span id="wishlist-count">0</span>
+            <small>Saved</small>
+          </div>
+          <div>
+            <span id="cart-count">0</span>
+            <small>In cart</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="controls-bar" aria-label="Catalog controls">
+        <label class="search-box" for="search-input">
+          <i class="bi bi-search"></i>
+          <input id="search-input" type="search" placeholder="Search products">
+        </label>
+
+        <select id="sort-select" class="form-select" aria-label="Sort products">
+          <option value="featured">Featured</option>
+          <option value="price-low">Price: low to high</option>
+          <option value="price-high">Price: high to low</option>
+          <option value="rating">Top rated</option>
+        </select>
+      </section>
+
+      <section class="catalog-layout">
+        <div>
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Catalog</p>
+              <h2>Available products</h2>
+            </div>
+            <span id="result-label">Showing all</span>
+          </div>
+
+          <div class="product-grid" id="product-grid" aria-live="polite"></div>
+        </div>
+
+        <aside class="cart-panel" aria-label="Shopping cart">
+          <div class="cart-header">
+            <div>
+              <p class="eyebrow">Checkout</p>
+              <h2>Your cart</h2>
+            </div>
+            <button class="icon-btn" id="clear-cart" type="button" aria-label="Clear cart">
+              <i class="bi bi-trash3"></i>
+            </button>
+          </div>
+
+          <div id="cart-items" class="cart-items"></div>
+
+          <div class="coupon-box">
+            <label for="coupon-input">Promo code</label>
+            <div>
+              <input id="coupon-input" type="text" placeholder="TRY SAVE10">
+              <button id="apply-coupon" type="button">Apply</button>
+            </div>
+            <span id="coupon-message"></span>
+          </div>
+
+          <div class="totals">
+            <div>
+              <span>Subtotal</span>
+              <strong id="subtotal-price">PHP 0</strong>
+            </div>
+            <div>
+              <span>Discount</span>
+              <strong id="discount-price">PHP 0</strong>
+            </div>
+            <div>
+              <span>Delivery</span>
+              <strong id="delivery-price">PHP 45</strong>
+            </div>
+            <div class="grand-total">
+              <span>Total</span>
+              <strong id="total-price">PHP 0</strong>
+            </div>
+          </div>
+
+          <button class="checkout-btn" id="place-order" type="button">
+            <i class="bi bi-bag-check"></i>
+            Place order
+          </button>
+        </aside>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast-message" id="toast-message" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
